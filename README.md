@@ -9,13 +9,12 @@ How it could be used: imagine you are doing Rails upgrade, you have many specs a
 Add gem to Gemfile:
 
 ```ruby
-   gem "deprecations_collector"
+gem "deprecations_collector", group: [:development, :test] # or even production
 ```
-
 
 Then run `bundle install`.
 
-In `config/environments/development.rb` or `config/environments/test.rb`
+In `config/environments/development.rb` or `config/environments/test.rb`. You can also do it for production.
 
 put:
 
