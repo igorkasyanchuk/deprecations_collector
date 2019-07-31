@@ -21,11 +21,11 @@ put:
 
 ```ruby
   config.active_support.deprecation = [:log, DeprecationsCollector.instance]
-  or
+  # or
   config.active_support.deprecation = [:stderr, DeprecationsCollector.instance]
-  or
+  # or
   config.active_support.deprecation = DeprecationsCollector.instance
-  or
+  # or
   config.active_support.deprecation = DeprecationsCollector.instance(filename: 'file-with-deprecations.log')
 ```
 
