@@ -8,7 +8,10 @@ How it could be used: imagine you are doing Rails upgrade, you have many specs a
 
 Add gem to Gemfile:
 
-`gem "deprecations_collector"`
+```ruby
+   gem "deprecations_collector"
+```
+
 
 Then run `bundle install`.
 
@@ -18,6 +21,14 @@ put:
 
 ```ruby
   config.active_support.deprecation = [:log, DeprecationsCollector.instance]
+  or
+  config.active_support.deprecation = [:stderr, DeprecationsCollector.instance]
+  or
+  config.active_support.deprecation = DeprecationsCollector.instance
+  or
+  config.active_support.deprecation = DeprecationsCollector.instance(filename: 'file-with-deprecations.log')
 ```
 
 Start your Rails application, or specs/tests. Than check `logs/deprecations.log`.
+
+Log file will be stored in `Rails.root/logs` folder.
